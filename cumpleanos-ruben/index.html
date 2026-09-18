@@ -601,6 +601,107 @@
       border: none;
     }
 
+    
+    /* Food & Cocktails Menu Button & Chip */
+    .btn-menu-cocktails {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.4) 50%, rgba(180, 83, 9, 0.25) 100%);
+      border: 1.5px solid rgba(251, 191, 36, 0.85);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), inset 0 0 14px rgba(251, 191, 36, 0.2);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 18px;
+    }
+    .btn-menu-cocktails:hover, .btn-menu-cocktails:active {
+      transform: translateY(-2px);
+      border-color: #fde68a;
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.75), inset 0 0 20px rgba(251, 191, 36, 0.35);
+    }
+    .btn-menu-cocktails::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%);
+      transform: rotate(25deg);
+      animation: menu-shine 3.5s infinite;
+      pointer-events: none;
+    }
+    @keyframes menu-shine {
+      0% { transform: translateX(-100%) rotate(25deg); }
+      30%, 100% { transform: translateX(100%) rotate(25deg); }
+    }
+    .btn-menu-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .btn-menu-emoji {
+      font-size: 1.55rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.85));
+    }
+    .btn-menu-label {
+      display: flex;
+      flex-direction: column;
+    }
+    .btn-menu-main {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      color: #fef08a;
+      text-shadow: 0 0 10px rgba(251, 191, 36, 0.65);
+    }
+    .btn-menu-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.76rem;
+      color: #e2e8f0;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      opacity: 0.95;
+    }
+    .btn-menu-badge {
+      background: rgba(251, 191, 36, 0.22);
+      border: 1px solid rgba(251, 191, 36, 0.65);
+      color: #fef08a;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 9px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      white-space: nowrap;
+    }
+    .venue-menu-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.5);
+      color: #fef08a;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+    .venue-menu-chip:hover {
+      background: rgba(245, 158, 11, 0.3);
+      border-color: #fde68a;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(251, 191, 36, 0.4);
+    }
+
     /* Primary WhatsApp RSVP Button */
     .btn-whatsapp-rsvp {
       background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
@@ -900,6 +1001,11 @@
         <h3 class="section-label">D Ó N D E</h3>
         <p class="section-value-primary">Alambique Bar</p>
         <p class="section-value-secondary">Honduras 4413, Palermo</p>
+        <div style="margin-top: 8px;">
+          <a href="menu_alambique.pdf" target="_blank" rel="noopener noreferrer" class="venue-menu-chip" title="Ver carta gastronómica y coctelería">
+            <span>🍸 Food &amp; Cocktails · Ver Menú 📄</span>
+          </a>
+        </div>
       </section>
 
       <!-- Divider -->
@@ -965,6 +1071,18 @@
           </svg>
           <span>Confirmar Asistencia por WhatsApp</span>
         </button>
+
+        <!-- Food & Cocktails Menu Button -->
+        <a class="btn-action btn-menu-cocktails" id="btn-menu-alambique" href="menu_alambique.pdf" target="_blank" rel="noopener noreferrer" title="Explorar carta gastronómica y coctelería de Alambique Bar">
+          <div class="btn-menu-left">
+            <span class="btn-menu-emoji">🍸</span>
+            <div class="btn-menu-label">
+              <span class="btn-menu-main">Food &amp; Cocktails</span>
+              <span class="btn-menu-sub">Ver carta y tragos de Alambique Bar</span>
+            </div>
+          </div>
+          <span class="btn-menu-badge">Ver Menú 📄</span>
+        </a>
 
         <!-- Google Maps Button -->
         <a class="btn-action btn-maps" id="btn-maps" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Alambique+Bar,+Honduras+4413,+Palermo,+Buenos+Aires">
