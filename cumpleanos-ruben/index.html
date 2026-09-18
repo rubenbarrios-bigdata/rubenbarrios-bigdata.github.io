@@ -1009,40 +1009,40 @@
   
     /* ============================================================
        INDICADOR LUMINOSO DE DESPLAZAMIENTO (SCROLL CUE)
-       "Un solo dedo a la derecha con texto corto: Toca aquí"
+       "A la derecha, más pequeño y discreto: Toca aquí 👇"
        ============================================================ */
     @keyframes fingerPointBounce {
       0%, 100% {
         transform: translateY(0) scale(1);
       }
       50% {
-        transform: translateY(7px) scale(1.18);
+        transform: translateY(5px) scale(1.12);
       }
     }
 
     @keyframes fingerNeonPulse {
       0%, 100% {
-        filter: drop-shadow(0 0 8px #ffbb44) drop-shadow(0 0 16px #ff9922);
+        filter: drop-shadow(0 0 4px #ffbb44) drop-shadow(0 0 10px #ff9922);
       }
       50% {
-        filter: drop-shadow(0 0 14px #ffcc55) drop-shadow(0 0 28px #ff8811) drop-shadow(0 0 45px #e65c00);
+        filter: drop-shadow(0 0 8px #ffcc55) drop-shadow(0 0 18px #ff8811);
       }
     }
 
     @keyframes cuePulseGold {
       0%, 100% {
-        box-shadow: 0 6px 28px rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 153, 34, 0.6), inset 0 1px 0 rgba(255, 240, 212, 0.35);
-        border-color: rgba(245, 186, 104, 0.8);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65), 0 0 12px rgba(255, 153, 34, 0.4), inset 0 1px 0 rgba(255, 240, 212, 0.25);
+        border-color: rgba(245, 186, 104, 0.7);
       }
       50% {
-        box-shadow: 0 8px 36px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 170, 51, 0.9), 0 0 50px rgba(230, 92, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        border-color: rgba(255, 225, 170, 1);
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 170, 51, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        border-color: rgba(255, 225, 170, 0.95);
       }
     }
 
     .luminous-finger {
       display: inline-block !important;
-      font-size: 1.45rem !important;
+      font-size: 1.05rem !important;
       line-height: 1 !important;
       transform-origin: center top !important;
       user-select: none !important;
@@ -1050,30 +1050,31 @@
       animation: fingerPointBounce 1.3s infinite ease-in-out, fingerNeonPulse 1.8s infinite ease-in-out !important;
     }
 
-    /* Indicador Flotante (Píldora Toca aquí con dedito a la derecha) */
+    /* Indicador Flotante (Píldora pequeña alineada a la derecha) */
     .scroll-cue-floating {
       display: none;
       position: fixed !important;
-      bottom: 22px !important;
-      left: 50% !important;
-      transform: translateX(-50%) translateZ(0) !important;
-      -webkit-transform: translateX(-50%) translateZ(0) !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      left: auto !important;
+      transform: translateZ(0) !important;
+      -webkit-transform: translateZ(0) !important;
       z-index: 1500 !important;
       align-items: center !important;
-      gap: 10px !important;
-      padding: 10px 22px !important;
-      border-radius: 50px !important;
+      gap: 6px !important;
+      padding: 6px 14px !important;
+      border-radius: 30px !important;
       cursor: pointer !important;
       background: rgba(14, 12, 17, 0.95) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border: 1.5px solid rgba(245, 186, 104, 0.85) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
+      border: 1px solid rgba(245, 186, 104, 0.75) !important;
       color: #fff0d4 !important;
-      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.75), 0 0 22px rgba(255, 153, 34, 0.6), inset 0 1px 0 rgba(255, 240, 212, 0.35) !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65), 0 0 12px rgba(255, 153, 34, 0.4) !important;
       font-family: 'Montserrat', sans-serif !important;
-      font-size: 0.88rem !important;
+      font-size: 0.74rem !important;
       font-weight: 700 !important;
-      letter-spacing: 0.4px !important;
+      letter-spacing: 0.3px !important;
       white-space: nowrap !important;
       user-select: none !important;
       -webkit-user-select: none !important;
@@ -1090,19 +1091,19 @@
     }
 
     .scroll-cue-floating:hover {
-      transform: translateX(-50%) translateY(-3px) scale(1.04) !important;
-      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 170, 51, 0.9) !important;
+      transform: translateY(-2px) scale(1.03) !important;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 170, 51, 0.7) !important;
     }
 
     .scroll-cue-floating.scroll-cue-hidden {
       opacity: 0 !important;
       visibility: hidden !important;
       pointer-events: none !important;
-      transform: translateX(-50%) translateY(16px) !important;
+      transform: translateY(10px) !important;
     }
 
     .scroll-cue-floating-text {
-      font-size: 0.88rem !important;
+      font-size: 0.74rem !important;
       font-weight: 700 !important;
       color: #fff0d4 !important;
       letter-spacing: 0.3px !important;
@@ -1113,22 +1114,23 @@
       filter: none !important;
     }
     body.neon-off .scroll-cue-floating {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5) !important;
       border-color: rgba(245, 186, 104, 0.4) !important;
     }
 
     @media (max-width: 480px) {
       .scroll-cue-floating {
-        bottom: 18px !important;
-        padding: 9px 18px !important;
-        gap: 8px !important;
-        max-width: 90vw !important;
+        bottom: 16px !important;
+        right: 14px !important;
+        padding: 5px 12px !important;
+        gap: 5px !important;
+        max-width: 140px !important;
       }
       .scroll-cue-floating-text {
-        font-size: 0.82rem !important;
+        font-size: 0.70rem !important;
       }
       .luminous-finger {
-        font-size: 1.35rem !important;
+        font-size: 0.95rem !important;
       }
     }
   </style>
