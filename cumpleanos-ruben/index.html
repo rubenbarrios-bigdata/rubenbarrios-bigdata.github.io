@@ -497,18 +497,42 @@
       letter-spacing: 0.3px;
     }
 
-    /* Dress code tag */
+    /* Badges wrapper & Dress code / Adults Only tags */
+    .card-badges-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
     .dresscode-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 6px;
-      padding: 4px 14px;
+      padding: 5px 14px;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 180, 80, 0.2);
       font-size: 0.82rem;
       color: var(--gold-light);
+      letter-spacing: 0.5px;
+    }
+
+    .adults-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fde68a;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
     }
 
     /* Card Footer Message */
@@ -1106,8 +1130,13 @@
       <section class="info-section">
         <h3 class="section-label">V E S T I M E N T A</h3>
         <p class="section-value-primary">Blanco y negro</p>
-        <div class="dresscode-badge">
-          <span>👔 Dress Code: Black & White 👗</span>
+        <div class="card-badges-wrap">
+          <div class="dresscode-badge">
+            <span>👔 Dress Code: Black &amp; White 👗</span>
+          </div>
+          <div class="adults-badge" title="Evento exclusivo solo para adultos (+18)">
+            <span>🍸 Solo Adultos · +18</span>
+          </div>
         </div>
       </section>
 
